@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل عيلة العرب</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>سجل عيلة العرب</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">الصفحة الرئيسية</a></li>
+            <li><a href="#register">تسجيل</a></li>
+            <li><a href="#members">الأعضاء</a></li>
+            <li><a href="#contact">التواصل</a></li>
+            <li><a href="admin.html">لوحة المطور</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>مقدمة عن العائلة</h2>
+            <p>معلومات عن العائلة وصورة ترحيبية.</p>
+        </section>
+
+        <section id="welcome">
+            <h2>مرحبًا بكم!</h2>
+            <p>أهلاً وسهلاً بكم في سجل عيلة العرب. نحن هنا لنوثق تراث العائلة ونبني جيلًا متماسكًا قائمًا على المحبة والاحترام. تفضلوا بالانضمام إلينا وتسجيل بياناتكم لتكونوا جزءًا من هذا النجاح!</p>
+            <img src="family_welcome.jpg" alt="Welcome Image" />
+        </section>
+
+        <section id="register">
+            <h2>تسجيل بيانات العائلة</h2>
+            <form id="registrationForm">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">العنوان:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="job">الوظيفة:</label>
+                <input type="text" id="job" name="job" required>
+
+                <button type="submit">سجل</button>
+            </form>
+        </section>
+
+        <section id="members">
+            <h2>الأعضاء</h2>
+            <p>قائمة بأفراد العائلة المسجلين.</p>
+        </section>
+
+        <section id="contact">
+            <h2>التواصل</h2>
+            <form>
+                <label for="message">رسالة:</label>
+                <textarea id="message" name="message"></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 جميع الحقوق محفوظة لـ "سجل عيلة العرب".</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // تأثير النقرة على الروابط
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.querySelector(link.getAttribute("href")).scrollIntoView({behavior: 'smooth'});
+        });
+    });
+
+    // تأثير ظهور الأقسام عند التمرير
+    const sections = document.querySelectorAll("section");
+    sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = "translateY(20px)";
+        section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+    });
+
+    window.addEventListener("scroll", () => {
+        sections.forEach(section => {
+            const sectionPosition = section.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.5;
+            if (sectionPosition < screenPosition) {
+                section.style.opacity = 1;
+                section.style.transform = "translateY(0)";
+            } else {
+                section.style.opacity = 0;
+                section.style.transform = "translateY(20px)";
+            }
+        });
+    });
+
+    // تفاعل الفورم
+    const registrationForm = document.querySelector("#registrationForm");
+    registrationForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.querySelector("#name").value;
+        const email = document.querySelector("#email").value;
+        const address = document.querySelector("#address").value;
+        const phone = document.querySelector("#phone").value;
+        const age = document.querySelector("#age").value;
+        const job = document.querySelector("#job").value;
+        
+        const newMember = {name, email, address, phone, age, job};
+        
+        const members = JSON.parse(localStorage.getItem("members")) || [];
+        members.push(newMember);
+        localStorage.setItem("members", JSON.stringify(members));
+
+        alert(`تم تسجيل ${name} بنجاح!\nالبريد الإلكتروني: ${email}\nالعنوان: ${address}\nرقم الهاتف: ${phone}\nالعمر: ${age}\nالوظيفة: ${job}`);
+        registrationForm.reset();
+    });
+});
